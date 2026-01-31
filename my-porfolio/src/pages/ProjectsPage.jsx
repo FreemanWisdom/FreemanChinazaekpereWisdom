@@ -1,7 +1,9 @@
+import { Link, useOutletContext } from "react-router-dom";
 import { projects } from "../data/projects";
-import { Link } from "react-router-dom";
 
 export default function ProjectsPage() {
+    const { dark } = useOutletContext();
+
     return (
         <div className="max-w-6xl mx-auto px-6 py-12 page-enter">
             <h1 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">My Projects</h1>
@@ -39,6 +41,19 @@ export default function ProjectsPage() {
                         </div>
                     </div>
                 ))}
+
+                {/* More loading soon card */}
+                <div className="flex flex-col items-center justify-center p-12 rounded-3xl bg-white/20 dark:bg-white/5 border border-dashed border-white/30 backdrop-blur-md opacity-60">
+                    <div className="w-16 h-16 mb-4 rounded-full bg-indigo-500/20 flex items-center justify-center animate-pulse">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">More Loading Soon</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                        New innovative projects are currently in development.
+                    </p>
+                </div>
             </div>
         </div>
     );

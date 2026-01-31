@@ -1,16 +1,25 @@
-# React + Vite
+# CODECRAFT | Freeman Chinazaekpere Wisdom Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, high-performance personal portfolio built with React, Vite, and Tailwind CSS. Featuring theme-aware animations (Day/Space), custom typography, and a production-optimized build.
 
-Currently, two official plugins are available:
+## Features
+- **Themed Experience**: Automatic light/dark mode with custom "Day Sky" and "Space" backgrounds.
+- **Micro-animations**: Orbital particles, drifting clouds, and pulsing sun effects.
+- **Premium Typography**: Power by Space Grotesk and Outfit fonts.
+- **Mobile Responsive**: Fully optimized for all screen sizes.
+- **Global Support Section**: Easy collaboration and support links.
+- **Certificate Modal**: Interactive full-view for certifications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
+- `src/components`: Reusable UI components (Navbar, Loader, Modal, etc.)
+- `src/pages`: Main page views (Home, About, Projects, Contact)
+- `src/data`: Data-driven content for easy updates.
+- `src/backgrounds`: Custom animated background systems.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Hosting & Deployment
+To prepare for hosting, run:
+```bash
+npm install
+npm run build
+```
+The production-ready files will be generated in the `dist` folder. You can deploy this folder directly to Vercel, Netlify, or any static hosting service.

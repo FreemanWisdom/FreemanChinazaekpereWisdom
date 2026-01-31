@@ -8,10 +8,17 @@ export default function SkillsPage() {
             <div className="grid md:grid-cols-2 gap-8 text-center">
                 <section className="bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/20">
                     <h2 className="text-2xl font-bold mb-8 text-indigo-600 dark:text-indigo-400">Technical Skills</h2>
-                    <div className="grid gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                         {skills.technical.map((skill, idx) => (
-                            <div key={idx} className="bg-white/60 dark:bg-white/10 p-4 rounded-xl shadow-sm text-gray-800 dark:text-gray-200">
-                                {skill}
+                            <div key={idx} className="group relative bg-white/60 dark:bg-white/10 p-4 rounded-2xl shadow-sm border border-white/20 transition-all hover:shadow-lg flex flex-col items-center gap-3">
+                                <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+                                    <img
+                                        src={skill.image}
+                                        alt={skill.name}
+                                        className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                                    />
+                                </div>
+                                <span className="text-sm font-bold text-gray-800 dark:text-gray-200">{skill.name}</span>
                             </div>
                         ))}
                     </div>

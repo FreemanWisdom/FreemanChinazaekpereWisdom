@@ -18,7 +18,7 @@ export default function Navbar({ dark, setDark }) {
     <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/30 dark:bg-black/30 border-b border-white/20 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="text-2xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-          {profile.firstName}
+          CODECRAFT
         </Link>
 
         {/* Desktop Links */}

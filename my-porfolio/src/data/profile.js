@@ -4,6 +4,11 @@ export const profile = {
   location: "Port Harcourt, Rivers State, Nigeria",
   phone: "0916 556 4047",
   email: "wisdomfreeman34@gmail.com",
-  tagline: "Frontend Developer crafting responsive, user-focused web experiences.",
-  about: `Front-End Developer with hands-on experience in HTML, CSS, JavaScript, React, and Tailwind CSS, supported by a foundation in graphic design. Passionate about building responsive, user-centered web interfaces that enhance usability and engagement. Experienced in translating design concepts into functional web applications and eager to grow within a collaborative, fast-paced tech environment.`,
+  tagline: "Dedicated to high-performance web solutions with a problem-solving mindset and a commitment to clean, user-focused design.",
+  about: `Front-End Developer specialized in HTML, CSS, JavaScript, React, and Tailwind CSS. Beyond my technical toolkit, I leverage a deep background in graphic design to ensure every line of code translates into a seamless, high-performance user experience. I thrive on continuous learning and professional growth, constantly refining my skills to stay at the forefront of frontend development. My goal is to bridge the gap between complex engineering and intuitive design, delivering real-world problem-solving solutions that empower users and drive meaningful engagement.`,
+  socials: {
+    github: "https://github.com/FreemanWisdom",
+    linkedin: "https://www.linkedin.com/in/wisdom-freeman-7b0529361/",
+    whatsapp: "https://wa.me/09165560407",
+  }
 };

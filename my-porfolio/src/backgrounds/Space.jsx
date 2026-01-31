@@ -3,11 +3,9 @@ import { useEffect, useState, useMemo } from "react";
 export default function Space() {
   const [stars, setStars] = useState([]);
 
-  // Floating code fragments
-  const codeSymbols = ["{ }", "=>", "const", "</div>", "( )", "[ ]", "map"];
 
   useEffect(() => {
-    const starCount = 80;
+    const starCount = 120;
     const newStars = Array.from({ length: starCount }).map((_, i) => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
@@ -37,21 +35,8 @@ export default function Space() {
         />
       ))}
 
-      {/* Floating Code Symbols */}
-      {codeSymbols.map((symbol, i) => (
-        <div
-          key={`symbol-${i}`}
-          className="absolute text-gray-500 text-xs font-mono opacity-20 pointer-events-none animate-float select-none"
-          style={{
-            top: `${10 + Math.random() * 80}%`,
-            left: `${10 + Math.random() * 80}%`,
-            animationDelay: `${i * 2}s`,
-            animationDuration: `${15 + Math.random() * 10}s`,
-          }}
-        >
-          {symbol}
-        </div>
-      ))}
+      {/* Subtle Space Dust / Nebula Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(66,56,202,0.05)_0%,transparent_50%)]" />
 
       {/* Improved Comets */}
       <div className="absolute inset-0 pointer-events-none">

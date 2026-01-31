@@ -13,6 +13,10 @@ export default {
         nebula: "#6d5dfc",
         solar: "#facc15",
       },
+      fontFamily: {
+        sans: ["Outfit", "sans-serif"],
+        display: ["Space Grotesk", "sans-serif"],
+      },
     },
   },
   plugins: [
