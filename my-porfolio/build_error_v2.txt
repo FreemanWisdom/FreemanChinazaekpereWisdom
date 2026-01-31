@@ -1,0 +1,87 @@
+﻿
+> my-porfolio@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 3 modules transformed.
+node.exe : 
+[31mΓ£ù[39m Build 
+failed in 156ms
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([31mΓ£ù[39m   
+  Build failed in 1    
+56ms:String) [], R    
+emoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+[31merror during 
+build:
+[31m[vite:css] Failed 
+to load PostCSS config 
+(searchPath: C:/Users/C
+DMIS-ADMIN/Personal-POR
+T/my-porfolio): 
+[Error] Loading 
+PostCSS Plugin failed: 
+Cannot find module 
+'@tailwindcss/postcss'
+Require stack:
+- C:\Users\CDMIS-ADMIN\
+Personal-PORT\my-porfol
+io\postcss.config.js
+
+(@C:\Users\CDMIS-ADMIN\
+Personal-PORT\my-porfol
+io\postcss.config.js)
+Error: Loading PostCSS 
+Plugin failed: Cannot 
+find module 
+'@tailwindcss/postcss'
+Require stack:
+- C:\Users\CDMIS-ADMIN\
+Personal-PORT\my-porfol
+io\postcss.config.js
+
+(@C:\Users\CDMIS-ADMIN\
+Personal-PORT\my-porfol
+io\postcss.config.js)
+    at load (file:///C:
+/Users/CDMIS-ADMIN/Pers
+onal-PORT/my-porfolio/n
+ode_modules/vite/dist/n
+ode/chunks/config.js:76
+60:10)
+    at async 
+Promise.all (index 0)
+    at async plugins (f
+ile:///C:/Users/CDMIS-A
+DMIN/Personal-PORT/my-p
+orfolio/node_modules/vi
+te/dist/node/chunks/con
+fig.js:7682:11)
+    at async 
+processResult (file:///
+C:/Users/CDMIS-ADMIN/Pe
+rsonal-PORT/my-porfolio
+/node_modules/vite/dist
+/node/chunks/config.js:
+7721:13)[31m
+file: [36mC:/Users/CDM
+IS-ADMIN/Personal-PORT/
+my-porfolio/src/index.c
+ss[31m
+[39m

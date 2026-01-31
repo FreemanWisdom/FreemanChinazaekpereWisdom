@@ -1,0 +1,106 @@
+﻿
+> my-porfolio@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 5 modules transformed.
+node.exe : 
+[31mΓ£ù[39m Build 
+failed in 1.79s
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([31mΓ£ù[39m   
+  Build failed in 1    
+.79s:String) [], R    
+emoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+[31merror during 
+build:
+[31m[vite:css] 
+[postcss] C:/Users/CDMI
+S-ADMIN/Personal-PORT/m
+y-porfolio/src/index.cs
+s:127:3: The 
+`animate-in` class 
+does not exist. If 
+`animate-in` is a 
+custom class, make 
+sure it is defined 
+within a `@layer` 
+directive.[31m
+file: [36mC:/Users/CDM
+IS-ADMIN/Personal-PORT/
+my-porfolio/src/index.c
+ss:127:2[31m
+    at Input.error (C:\
+Users\CDMIS-ADMIN\Perso
+nal-PORT\my-porfolio\no
+de_modules\postcss\lib\
+input.js:135:16)
+    at AtRule.error (C:
+\Users\CDMIS-ADMIN\Pers
+onal-PORT\my-porfolio\n
+ode_modules\postcss\lib
+\node.js:146:32)
+    at processApply (C:
+\Users\CDMIS-ADMIN\Pers
+onal-PORT\my-porfolio\n
+ode_modules\tailwindcss
+\lib\lib\expandApplyAtR
+ules.js:380:29)
+    at C:\Users\CDMIS-A
+DMIN\Personal-PORT\my-p
+orfolio\node_modules\ta
+ilwindcss\lib\lib\expan
+dApplyAtRules.js:551:9
+    at C:\Users\CDMIS-A
+DMIN\Personal-PORT\my-p
+orfolio\node_modules\ta
+ilwindcss\lib\processTa
+ilwindFeatures.js:55:50
+    at async plugins (C
+:\Users\CDMIS-ADMIN\Per
+sonal-PORT\my-porfolio\
+node_modules\tailwindcs
+s\lib\plugin.js:38:17)
+    at async 
+LazyResult.runAsync (C:
+\Users\CDMIS-ADMIN\Pers
+onal-PORT\my-porfolio\n
+ode_modules\postcss\lib
+\lazy-result.js:293:11)
+    at async 
+runPostCSS (file:///C:/
+Users/CDMIS-ADMIN/Perso
+nal-PORT/my-porfolio/no
+de_modules/vite/dist/no
+de/chunks/config.js:301
+45:19)
+    at async 
+compilePostCSS (file://
+/C:/Users/CDMIS-ADMIN/P
+ersonal-PORT/my-porfoli
+o/node_modules/vite/dis
+t/node/chunks/config.js
+:30129:6)
+    at async 
+compileCSS (file:///C:/
+Users/CDMIS-ADMIN/Perso
+nal-PORT/my-porfolio/no
+de_modules/vite/dist/no
+de/chunks/config.js:300
+59:26)[39m
