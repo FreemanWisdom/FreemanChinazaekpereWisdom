@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { profile } from "../data/profile";
-import ThemeToggle from "./ThemeToggle";
-
-export default function Navbar({ dark, setDark }) {
+export default function Navbar({ dark }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -17,7 +15,7 @@ export default function Navbar({ dark, setDark }) {
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/30 dark:bg-black/30 border-b border-white/20 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        <Link to="/" className="text-2xl font-black bg-gradient-to-r from-stone-400 via-stone-300 to-stone-200 bg-clip-text text-transparent">
           CODECRAFT
         </Link>
 
@@ -28,7 +26,7 @@ export default function Navbar({ dark, setDark }) {
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
-                `text-sm font-bold transition-all hover:text-indigo-600 dark:hover:text-indigo-400 ${isActive ? "text-indigo-600 dark:text-indigo-400" : "text-gray-700 dark:text-gray-300"
+                `text-sm font-bold transition-all hover:text-indigo-600 dark:hover:text-indigo-400 ${isActive ? "text-indigo-600 dark:text-indigo-400" : "text-gray-700 dark:text-stone-300"
                 }`
               }
             >
@@ -42,12 +40,11 @@ export default function Navbar({ dark, setDark }) {
           >
             Resume
           </a>
-          <ThemeToggle dark={dark} setDark={setDark} />
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-gray-700 dark:text-white"
+          className="md:hidden text-gray-700 dark:text-stone-200"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "✕" : "☰"}
@@ -63,7 +60,7 @@ export default function Navbar({ dark, setDark }) {
               to={link.path}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `text-lg font-bold ${isActive ? "text-indigo-600" : "text-gray-700 dark:text-gray-300"
+                `text-lg font-bold ${isActive ? "text-indigo-600" : "text-gray-700 dark:text-stone-300"
                 }`
               }
             >
@@ -77,9 +74,6 @@ export default function Navbar({ dark, setDark }) {
           >
             Download Resume
           </a>
-          <div className="flex justify-center pt-4">
-            <ThemeToggle dark={dark} setDark={setDark} />
-          </div>
         </div>
       )}
 

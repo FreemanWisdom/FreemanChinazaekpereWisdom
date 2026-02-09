@@ -1,6 +1,6 @@
 export const profile = {
   firstName: "Freeman",
-  lastName: "Chinazaekpere Wisdom",
+  lastName: "C. Wisdom",
   location: "Port Harcourt, Rivers State, Nigeria",
   phone: "0916 556 4047",
   email: "wisdomfreeman34@gmail.com",

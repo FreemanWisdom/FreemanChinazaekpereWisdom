@@ -2,20 +2,11 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Space from "../backgrounds/Space";
-import Sky from "../backgrounds/sky";
 import Donate from "./Donate";
 import Loader from "./loader";
 
 export default function Layout() {
-    const [dark, setDark] = useState(
-        localStorage.getItem("theme") === "dark"
-    );
     const [isFirstLoad, setIsFirstLoad] = useState(true);
-
-    useEffect(() => {
-        document.documentElement.classList.toggle("dark", dark);
-        localStorage.setItem("theme", dark ? "dark" : "light");
-    }, [dark]);
 
     // One-time loader on initial mount/refresh
     useEffect(() => {
@@ -27,12 +18,12 @@ export default function Layout() {
 
     return (
         <div className="relative min-h-screen overflow-x-hidden transition-colors duration-500">
-            <Loader dark={dark} isVisible={isFirstLoad} />
+            <Loader dark={true} standsFor="dark" isVisible={isFirstLoad} />
 
-            {dark ? <Space /> : <Sky />}
-            <Navbar dark={dark} setDark={setDark} />
+            <Space />
+            <Navbar dark={true} />
             <main className="relative pt-20 pb-10">
-                <Outlet context={{ dark }} />
+                <Outlet context={{ dark: true }} />
             </main>
             <Donate />
         </div>

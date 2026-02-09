@@ -39,8 +39,8 @@ export default function Hero() {
           Available for Projects
         </h2>
 
-        <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight text-gray-900 dark:text-white leading-[1.1]">
-          I'm <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight text-gray-900 dark:text-stone-200 leading-[1.1]">
+          I'm <span className="bg-gradient-to-r from-stone-400 via-stone-300 to-stone-200 bg-clip-text text-transparent">
             {profile.firstName} {profile.lastName}
           </span>
         </h1>
@@ -52,27 +52,27 @@ export default function Hero() {
           </p>
         </div>
 
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 dark:text-stone-400 mb-10 max-w-2xl mx-auto leading-relaxed">
           {profile.tagline}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
             to="/projects"
-            className="group relative px-10 py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-2xl font-black text-lg transition-all hover:scale-105 hover:shadow-[0_20px_50px_rgba(79,70,229,0.3)] dark:hover:shadow-[0_20px_50px_rgba(255,255,255,0.15)]"
+            className="group relative px-10 py-5 bg-gray-900 dark:bg-stone-200 text-white dark:text-stone-900 rounded-2xl font-black text-lg transition-all hover:scale-105 hover:shadow-[0_20px_50px_rgba(79,70,229,0.3)] dark:hover:shadow-[0_20px_50px_rgba(255,255,255,0.15)]"
           >
             Explore My Work
           </Link>
 
           <Link
             to="/contact"
-            className="px-10 py-5 bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl font-black text-lg transition-all hover:bg-white/80 dark:hover:bg-white/10 dark:text-white"
+            className="px-10 py-5 bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl font-black text-lg transition-all hover:bg-white/80 dark:hover:bg-white/10 dark:text-stone-200"
           >
             Let's Talk
           </Link>
         </div>
 
-        <div className="mt-20 flex justify-center gap-12 text-gray-400 dark:text-gray-600 font-mono text-sm">
+        <div className="mt-20 flex justify-center gap-12 text-gray-400 dark:text-stone-600 font-mono text-sm">
           <span>{profile.location}</span>
         </div>
       </div>
