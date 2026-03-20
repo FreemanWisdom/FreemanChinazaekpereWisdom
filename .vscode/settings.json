@@ -1,4 +1,7 @@
 {
     "git.ignoreLimitWarning": true,
-    "css.lint.unknownAtRules": "ignore"
+    "css.lint.unknownAtRules": "ignore",
+    "chatgpt.openOnStartup": true,
+    "powermode.enabled": true,
+    "powermode.combo.timeout": 5
 }

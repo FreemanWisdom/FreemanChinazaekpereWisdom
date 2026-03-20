@@ -1,60 +1,88 @@
-import { useParams, Link } from "react-router-dom";
 import { projects } from "../data/projects";
 
-export default function ProjectDetails() {
-    const { id } = useParams();
-    const project = projects.find((p) => p.id === id);
+export default function ProjectDetails({ projectId, onBackToProjects }) {
+    const project = projects.find((entry) => entry.id === projectId);
 
-    if (!project) return <div className="text-center py-20">Project not found</div>;
+    if (!project) {
+        return <div className="py-20 text-center text-[#d6e4f7]">Project not found.</div>;
+    }
 
     return (
-        <div className="max-w-6xl mx-auto px-6 py-12 animate-in fade-in duration-700">
-            <Link to="/projects" className="inline-flex items-center text-indigo-600 dark:text-indigo-400 mb-8 hover:underline">
-                ← Back to Projects
-            </Link>
+        <div className="mx-auto max-w-6xl px-6 py-12 animate-in fade-in duration-700">
+            {onBackToProjects && (
+                <button
+                    type="button"
+                    onClick={onBackToProjects}
+                    className="mb-8 inline-flex items-center text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]"
+                >
+                    ← Back to Projects
+                </button>
+            )}
 
-            <h1 className="text-5xl font-bold mb-6 text-gray-900 dark:text-white">{project.name}</h1>
+            <h1 className="mb-6 text-5xl font-bold text-white">{project.name}</h1>
 
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className="mb-10 flex flex-wrap gap-3">
                 {project.techStack.map((tech) => (
-                    <span key={tech} className="px-4 py-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-medium rounded-xl">
+                    <span
+                        key={tech}
+                        className="rounded-xl border border-[var(--color-accent)]/25 bg-[var(--color-accent)]/10 px-4 py-2 font-medium text-[var(--color-accent)]"
+                    >
                         {tech}
                     </span>
                 ))}
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-12 mb-16">
-                <div className="lg:col-span-2 space-y-12">
-                    {/* Desktop Preview */}
-                    <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/20">
-                        <img src={project.images.desktop} alt={`${project.name} Desktop`} className="w-full h-auto" />
+            <div className="mb-16 grid gap-12 lg:grid-cols-3">
+                <div className="space-y-12 lg:col-span-2">
+                    <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+                        <img
+                            src={project.images.desktop}
+                            alt={`${project.name} Desktop`}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-auto w-full"
+                        />
                     </div>
 
                     <section>
-                        <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Project Overview</h2>
-                        <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                        <h2 className="mb-4 text-2xl font-bold text-white">Project Overview</h2>
+                        <p className="text-lg leading-relaxed text-[#9db2ce]">
                             {project.fullDescription}
                         </p>
                     </section>
                 </div>
 
                 <div className="space-y-10">
-                    {/* Sticky Actions */}
                     <div className="lg:sticky lg:top-28 space-y-8">
-                        <div className="bg-white/40 dark:bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-xl">
+                        <div className="panel p-8">
                             <div className="space-y-4">
-                                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="block w-full bg-indigo-600 text-white text-center py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/30">
-                                    Live Demo
+                                <a
+                                    href={project.liveDemo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full rounded-2xl bg-[var(--color-accent)] py-4 text-center font-bold text-[#08111f]"
+                                >
+                                    Live Link
                                 </a>
-                                <a href={project.github} target="_blank" rel="noopener noreferrer" className="block w-full border-2 border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400 text-center py-4 rounded-2xl font-bold hover:bg-indigo-50 dark:hover:bg-indigo-900/10 transition-all">
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full rounded-2xl border border-white/12 bg-white/[0.04] py-4 text-center font-bold text-white"
+                                >
                                     Source Code
                                 </a>
                             </div>
                         </div>
 
-                        {/* Mobile Preview */}
-                        <div className="mx-auto w-[280px] rounded-[3rem] overflow-hidden border-[8px] border-gray-900 dark:border-gray-800 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                            <img src={project.images.mobile} alt={`${project.name} Mobile`} className="w-full h-auto" />
+                        <div className="mx-auto w-[280px] rotate-2 overflow-hidden rounded-[3rem] border-[8px] border-[#09111f] shadow-2xl transition-transform duration-500 hover:rotate-0">
+                            <img
+                                src={project.images.mobile}
+                                alt={`${project.name} Mobile`}
+                                loading="lazy"
+                                decoding="async"
+                                className="h-auto w-full"
+                            />
                         </div>
                     </div>
                 </div>

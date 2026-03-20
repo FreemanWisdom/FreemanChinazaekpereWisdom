@@ -1,122 +1,177 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { profile } from "../data/profile";
 import { education } from "../data/education";
 import { interests } from "../data/interests";
 import { certifications } from "../data/certifications";
 
 export default function About() {
-    const [selectedCert, setSelectedCert] = useState(null);
+  const [selectedCert, setSelectedCert] = useState(null);
 
-    useEffect(() => {
-        if (selectedCert) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
+  useEffect(() => {
+    document.body.style.overflow = selectedCert ? "hidden" : "";
 
-        const handleEsc = (e) => {
-            if (e.key === 'Escape') setSelectedCert(null);
-        };
-        window.addEventListener('keydown', handleEsc);
-        return () => {
-            window.removeEventListener('keydown', handleEsc);
-            document.body.style.overflow = 'unset';
-        };
-    }, [selectedCert]);
+    const handleEsc = (event) => {
+      if (event.key === "Escape") {
+        setSelectedCert(null);
+      }
+    };
 
-    return (
-        <div className="max-w-4xl mx-auto px-6 py-12 page-enter">
-            <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">About Me</h1>
+    window.addEventListener("keydown", handleEsc);
 
-            <section className="bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-3xl p-8 mb-12 shadow-xl border border-white/20">
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-                    {profile.about}
-                </p>
-                <p className="text-gray-600 dark:text-gray-400">
-                    📍 {profile.location}
-                </p>
-            </section>
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "";
+    };
+  }, [selectedCert]);
 
-            <div className="grid md:grid-cols-2 gap-12">
-                <section>
-                    <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Education</h2>
-                    <div className="space-y-6">
-                        {education.map((edu, idx) => (
-                            <div key={idx} className="border-l-2 border-indigo-500 pl-4">
-                                <h3 className="font-bold text-gray-900 dark:text-white">{edu.program}</h3>
-                                <p className="text-gray-600 dark:text-gray-400">{edu.institution}</p>
-                                <p className="text-sm text-indigo-600 dark:text-indigo-400">{edu.date}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+  return (
+    <div className="page-enter mx-auto max-w-6xl px-6 py-16 md:px-10 lg:px-12">
+      <div className="mb-12 max-w-3xl">
+        <p className="section-eyebrow">About</p>
+        <h2 className="mt-5 text-4xl font-black text-white md:text-5xl">
+          Design-minded frontend work rooted in clarity, speed, and maintainable structure.
+        </h2>
+        <p className="mt-6 text-lg leading-8 text-[#9db2ce]">{profile.about}</p>
+      </div>
 
-                <section>
-                    <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Interests</h2>
-                    <div className="bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                        <p className="text-gray-700 dark:text-gray-300 italic">
-                            "{interests}"
-                        </p>
-                    </div>
-                </section>
-            </div>
+      <section className="panel mb-10 p-8 sm:p-10">
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="panel p-5">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-accent)]">
+              Base
+            </p>
+            <p className="mt-3 text-lg font-semibold text-white">{profile.location}</p>
+          </div>
 
-            <section className="mt-16">
-                <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Certifications</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                    {certifications.map((cert, idx) => (
-                        <div
-                            key={idx}
-                            onClick={() => setSelectedCert(cert)}
-                            className="group cursor-pointer overflow-hidden bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl transition-all hover:scale-[1.02]"
-                        >
-                            <div className="relative h-48 overflow-hidden">
-                                <img
-                                    src={cert.image}
-                                    alt={cert.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{cert.title}</h3>
-                                <p className="text-indigo-600 dark:text-indigo-400 font-semibold">{cert.organization}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
+          <div className="panel p-5">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-accent)]">
+              Approach
+            </p>
+            <p className="mt-3 text-lg font-semibold text-white">Performance-first execution</p>
+          </div>
 
-            {/* Certificate Modal */}
-            {selectedCert && (
-                <div
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-300"
-                    onClick={() => setSelectedCert(null)}
-                >
-                    <div
-                        className="relative max-w-5xl w-full bg-transparent p-2 animate-in zoom-in duration-300 outline-none"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button
-                            className="absolute -top-12 right-0 text-white hover:text-indigo-400 transition-colors bg-white/10 p-2 rounded-full backdrop-blur-md"
-                            onClick={() => setSelectedCert(null)}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                        <img
-                            src={selectedCert.image}
-                            alt={selectedCert.title}
-                            className="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl"
-                        />
-                        <div className="mt-4 text-center">
-                            <h3 className="text-2xl font-bold text-white">{selectedCert.title}</h3>
-                            <p className="text-indigo-400 font-semibold">{selectedCert.organization}</p>
-                        </div>
-                    </div>
-                </div>
-            )}
+          <div className="panel p-5">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-accent)]">
+              Focus
+            </p>
+            <p className="mt-3 text-lg font-semibold text-white">Readable, scalable components</p>
+          </div>
         </div>
-    );
+      </section>
+
+      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <section className="panel p-8 sm:p-10">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-accent)]">
+            Education
+          </p>
+          <div className="mt-8 space-y-6">
+            {education.map((edu, index) => (
+              <article key={index} className="border-l border-[var(--color-accent)]/40 pl-5">
+                <h3 className="text-xl font-semibold text-white">{edu.program}</h3>
+                <p className="mt-2 text-base text-[#9db2ce]">{edu.institution}</p>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+                  {edu.date}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="panel p-8 sm:p-10">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-accent)]">
+            Interests
+          </p>
+          <div className="mt-8 panel p-6 border-white/5">
+            <p className="text-lg italic leading-8 text-[var(--color-text)]">"{interests}"</p>
+          </div>
+        </section>
+      </div>
+
+      <section className="mt-16">
+        <div className="mb-8 max-w-2xl">
+          <p className="section-eyebrow">Certifications</p>
+          <h3 className="mt-4 text-3xl font-black text-white md:text-4xl">
+            Credentials that reinforce the craft behind the interface.
+          </h3>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          {certifications.map((cert, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => setSelectedCert(cert)}
+              className="panel panel-hover group overflow-hidden text-left"
+            >
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08111f] via-transparent to-transparent" />
+              </div>
+
+              <div className="p-6">
+                <h4 className="text-xl font-bold text-white">{cert.title}</h4>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+                  {cert.organization}
+                </p>
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {selectedCert && (
+          <div className="fixed inset-0 z-[70] flex items-center justify-center bg-[var(--color-primary)]/85 p-4 backdrop-blur-md"
+            onClick={() => setSelectedCert(null)}
+          >
+            <div
+              className="panel relative w-full max-w-5xl overflow-hidden p-3"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="absolute right-5 top-5 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[var(--color-secondary)]/80 text-white transition-colors hover:text-[var(--color-accent)]"
+              onClick={() => setSelectedCert(null)}
+              aria-label="Close certificate preview"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            <img
+              src={selectedCert.image}
+              alt={selectedCert.title}
+              loading="eager"
+              decoding="async"
+              className="max-h-[80vh] w-full rounded-[1.5rem] object-contain"
+            />
+
+            <div className="px-4 pb-4 pt-5 text-center">
+              <h4 className="text-2xl font-bold text-white">{selectedCert.title}</h4>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+                {selectedCert.organization}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }

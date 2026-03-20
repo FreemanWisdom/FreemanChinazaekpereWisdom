@@ -1,31 +1,25 @@
-import { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
+import { useEffect, useState } from "react";
 import Space from "../backgrounds/Space";
-import Donate from "./Donate";
 import Loader from "./loader";
 
-export default function Layout() {
-    const [isFirstLoad, setIsFirstLoad] = useState(true);
+export default function Layout({ children }) {
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
-    // One-time loader on initial mount/refresh
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsFirstLoad(false);
-        }, 1500);
-        return () => clearTimeout(timer);
-    }, []);
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsFirstLoad(false);
+    }, 1400);
 
-    return (
-        <div className="relative min-h-screen overflow-x-hidden transition-colors duration-500">
-            <Loader dark={true} standsFor="dark" isVisible={isFirstLoad} />
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, []);
 
-            <Space />
-            <Navbar dark={true} />
-            <main className="relative pt-20 pb-10">
-                <Outlet context={{ dark: true }} />
-            </main>
-            <Donate />
-        </div>
-    );
+  return (
+    <div className="relative min-h-screen overflow-x-clip bg-[var(--color-primary)] text-[var(--color-text)]">
+      <Loader isVisible={isFirstLoad} />
+      <Space />
+      <main className="relative">{children}</main>
+    </div>
+  );
 }

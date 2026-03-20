@@ -1,82 +1,103 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { profile } from "../data/profile";
-export default function Navbar({ dark }) {
+
+const DEFAULT_NAV_LINKS = [
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Skills", id: "skills" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
+];
+
+export default function Navbar({
+  navLinks = DEFAULT_NAV_LINKS,
+  activeSection = "home",
+  onNavigate,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Skills", path: "/skills" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
-  ];
+  const handleNavigate = (sectionId) => {
+    onNavigate?.(sectionId);
+    setIsOpen(false);
+  };
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/30 dark:bg-black/30 border-b border-white/20 dark:border-white/10">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-black bg-gradient-to-r from-stone-400 via-stone-300 to-stone-200 bg-clip-text text-transparent">
+    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#08111f]/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        <button
+          type="button"
+          onClick={() => handleNavigate("home")}
+          className="text-2xl font-black text-white"
+        >
           CODECRAFT
-        </Link>
+        </button>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <NavLink
+            <button
               key={link.name}
-              to={link.path}
-              className={({ isActive }) =>
-                `text-sm font-bold transition-all hover:text-indigo-600 dark:hover:text-indigo-400 ${isActive ? "text-indigo-600 dark:text-indigo-400" : "text-gray-700 dark:text-stone-300"
-                }`
-              }
+              type="button"
+              onClick={() => handleNavigate(link.id)}
+              className={`text-sm font-bold transition-colors ${
+                activeSection === link.id
+                  ? "text-[var(--color-accent)]"
+                  : "text-[#d6e4f7] hover:text-[var(--color-accent)]"
+              }`}
             >
               {link.name}
-            </NavLink>
+            </button>
           ))}
+
           <a
             href="/assets/resume/MY RESUME (1).pdf"
             download
-            className="px-6 py-2 bg-indigo-600 text-white rounded-full text-sm font-bold hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/30"
+            className="rounded-full bg-[var(--color-accent)] px-6 py-2 text-sm font-bold text-[#08111f]"
           >
             Resume
           </a>
         </div>
 
-        {/* Mobile Toggle */}
         <button
-          className="md:hidden text-gray-700 dark:text-stone-200"
-          onClick={() => setIsOpen(!isOpen)}
+          type="button"
+          className="text-white md:hidden"
+          onClick={() => setIsOpen((currentState) => !currentState)}
+          aria-expanded={isOpen}
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         >
-          {isOpen ? "✕" : "☰"}
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            />
+          </svg>
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5">
+        <div className="absolute left-0 top-20 flex w-full flex-col gap-6 border-b border-white/10 bg-[#08111f]/95 p-6 backdrop-blur-xl md:hidden">
           {navLinks.map((link) => (
-            <NavLink
+            <button
               key={link.name}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `text-lg font-bold ${isActive ? "text-indigo-600" : "text-gray-700 dark:text-stone-300"
-                }`
-              }
+              type="button"
+              onClick={() => handleNavigate(link.id)}
+              className={`text-left text-lg font-bold ${
+                activeSection === link.id ? "text-[var(--color-accent)]" : "text-white"
+              }`}
             >
               {link.name}
-            </NavLink>
+            </button>
           ))}
+
           <a
             href="/assets/resume/MY RESUME (1).pdf"
             download
-            className="w-full py-4 bg-indigo-600 text-white rounded-2xl text-center font-bold"
+            className="w-full rounded-2xl bg-[var(--color-accent)] py-4 text-center font-bold text-[#08111f]"
           >
             Download Resume
           </a>
         </div>
       )}
-
     </nav>
   );
 }

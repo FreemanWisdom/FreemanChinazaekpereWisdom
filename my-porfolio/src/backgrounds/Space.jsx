@@ -1,53 +1,26 @@
-import { useEffect, useState, useMemo } from "react";
-
 export default function Space() {
-  const [stars, setStars] = useState([]);
-
-
-  useEffect(() => {
-    const starCount = 120;
-    const newStars = Array.from({ length: starCount }).map((_, i) => ({
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      size: Math.random() < 0.2 ? "w-1.5 h-1.5" : "w-0.5 h-0.5",
-      delay: `${Math.random() * 5}s`,
-      duration: `${3 + Math.random() * 4}s`,
-      depth: Math.random() > 0.5 ? "0.1" : "0.3", // Parallax depth
-      type: Math.random() > 0.7 ? "animate-twinkle" : "animate-shimmer",
-    }));
-    setStars(newStars);
-  }, []);
-
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#0B0B13] via-[#1A1A2E] to-[#0B0B13]">
-      {/* Stars with Parallax vibe */}
-      {stars.map((star, i) => (
-        <div
-          key={i}
-          className={`absolute rounded-full bg-white opacity-60 ${star.size} ${star.type}`}
-          style={{
-            top: star.top,
-            left: star.left,
-            animationDelay: star.delay,
-            animationDuration: star.duration,
-            transform: `translateZ(${star.depth}px)`,
-          }}
-        />
-      ))}
+    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-primary)]">
+      {/* Multi-stop gradient base — dark navy depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(17,34,64,0.7),transparent_55%),radial-gradient(ellipse_60%_50%_at_100%_0%,rgba(17,34,64,0.5),transparent_45%),linear-gradient(180deg,#0a192f_0%,#071325_40%,#050b14_100%)]" />
 
-      {/* Subtle Space Dust / Nebula Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(66,56,202,0.05)_0%,transparent_50%)]" />
+      {/* Subtle grid texture — fades toward edges */}
+      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(230,241,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(230,241,255,0.04)_1px,transparent_1px)] [background-size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,black,transparent_80%)]" />
 
-      {/* Improved Comets */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 right-1/4 w-40 h-[1.5px] bg-gradient-to-r from-transparent via-blue-400/50 to-white/80 animate-comet rotate-45" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/3 right-0 w-60 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-white/60 animate-comet rotate-45" style={{ animationDelay: "7s" }} />
-        <div className="absolute top-3/4 right-1/3 w-32 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-white/40 animate-comet rotate-45" style={{ animationDelay: "12s" }} />
-      </div>
+      {/* Soft orange accent glow — top left */}
+      <div className="absolute -left-32 -top-20 h-[28rem] w-[28rem] rounded-full bg-[var(--color-accent)]/[0.07] blur-[120px]" />
 
-      {/* Subtle Space Dust / Nebula Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(66,56,202,0.05)_0%,transparent_50%)]" />
+      {/* Smaller warm glow — bottom right */}
+      <div className="absolute -bottom-24 -right-20 h-80 w-80 rounded-full bg-[var(--color-accent)]/[0.04] blur-[100px]" />
+
+      {/* Cool navy glow — center right for depth */}
+      <div className="absolute right-[-8rem] top-1/3 h-[32rem] w-[32rem] rounded-full bg-[#112240]/40 blur-[140px]" />
+
+      {/* Secondary depth — lower left */}
+      <div className="absolute -left-16 bottom-1/4 h-72 w-72 rounded-full bg-[#0d1f3c]/50 blur-[100px]" />
+
+      {/* Center vignette — draws focus inward */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(5,11,20,0.5)_100%)]" />
     </div>
   );
 }
-
