@@ -29,8 +29,13 @@ export default function MobileNav({
           className="flex items-center transition-transform hover:scale-105"
         >
           <img 
-            src="/assets/images/logo.png" 
+            src="/assets/images/logo-optimized.png" 
             alt="Logo" 
+            width="768"
+            height="512"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="h-28 sm:h-32 w-auto object-contain" 
           />
         </button>

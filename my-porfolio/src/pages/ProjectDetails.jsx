@@ -38,7 +38,8 @@ export default function ProjectDetails({ projectId, onBackToProjects }) {
                         <img
                             src={project.images.desktop}
                             alt={`${project.name} Desktop`}
-                            loading="lazy"
+                            loading="eager"
+                            fetchPriority="high"
                             decoding="async"
                             className="h-auto w-full"
                         />

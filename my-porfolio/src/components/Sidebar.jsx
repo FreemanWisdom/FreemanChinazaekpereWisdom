@@ -20,8 +20,13 @@ export default function Sidebar({ items, activeSection, onNavigate }) {
             aria-label="Scroll to Home"
           >
             <img 
-              src="/assets/images/logo.png" 
+              src="/assets/images/logo-optimized.png" 
               alt="Logo" 
+              width="768"
+              height="512"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-48 xl:h-52 w-auto object-contain transition-all duration-500 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(255,122,0,0.25)]" 
             />
           </button>

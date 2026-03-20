@@ -13,16 +13,22 @@ export default function About() {
               <img
                 src="/assets/images/my profile image.jpeg"
                 alt={profile.name}
+                width="896"
+                height="1195"
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-primary)]/40 to-transparent opacity-50" />
             </div>
 
             {/* Content Under Image (Now a compact pill/stat instead of a big card) */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-auto">
-              <div className="panel flex items-center gap-3 px-6 py-3 border border-white/10 bg-[var(--color-secondary)]/90 backdrop-blur-xl rounded-full shadow-xl transition-all hover:border-[var(--color-accent)]/30 hover:-translate-y-1">
+            <div className="absolute -bottom-6 left-1/2 w-[92%] max-w-[18rem] -translate-x-1/2 sm:max-w-[20rem] md:w-auto md:max-w-none">
+              <div className="panel flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-[var(--color-secondary)]/90 px-4 py-2.5 text-center shadow-xl transition-all hover:-translate-y-1 hover:border-[var(--color-accent)]/30 sm:gap-3 sm:rounded-full sm:px-6 sm:py-3">
                 <div className="h-2 w-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
-                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-white whitespace-nowrap">Founder of Codecrafting</p>
+                <p className="text-[10px] font-black uppercase leading-relaxed tracking-[0.16em] text-white whitespace-normal sm:text-[11px] sm:tracking-[0.2em] sm:whitespace-nowrap">
+                  Founder of Codecrafting
+                </p>
               </div>
             </div>
           </div>

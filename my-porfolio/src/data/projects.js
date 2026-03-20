@@ -10,8 +10,8 @@ export const projects = [
     liveDemo: "https://capstone-phi-ecru.vercel.app/",
     github: "https://github.com/FreemanWisdom/NEWS-READER",
     images: {
-      desktop: "/assets/projects/newsreader laptop pic.png",
-      mobile: "/assets/projects/newsreader phone pic.png",
+      desktop: "/assets/projects/newsreader-laptop-optimized.jpg",
+      mobile: "/assets/projects/newsreader-phone-optimized.jpg",
     },
   },
 
@@ -26,8 +26,8 @@ export const projects = [
     liveDemo: "https://codecrafting.pxxl.click/",
     github: "https://github.com/FreemanWisdom/codecrafting",
     images: {
-      desktop: "/assets/projects/CodeCrafting Laptop Pic.png",
-      mobile: "/assets/projects/CodeCrafting Phone pic.png",
+      desktop: "/assets/projects/codecrafting-laptop-optimized.jpg",
+      mobile: "/assets/projects/codecrafting-phone-optimized.jpg",
     },
   },
 
@@ -42,8 +42,8 @@ export const projects = [
     liveDemo: "https://uzzyblooming.pxxl.click/",
     github: "https://github.com/FreemanWisdom/E-COMMERCE/tree/main/uzzy-blooming",
     images: {
-      desktop: "/assets/projects/ECOMMERCE-Laptop-pic.png",
-      mobile: "/assets/projects/ECOMMERCE-Phone-pic.png",
+      desktop: "/assets/projects/ecommerce-laptop-optimized.jpg",
+      mobile: "/assets/projects/ecommerce-phone-optimized.jpg",
     },
   },
 ];
