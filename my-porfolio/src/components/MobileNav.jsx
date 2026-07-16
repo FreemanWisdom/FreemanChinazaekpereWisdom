@@ -26,17 +26,18 @@ export default function MobileNav({
         <button 
           type="button" 
           onClick={() => onNavigate("home")} 
-          className="flex items-center transition-transform hover:scale-105"
+          className="flex h-14 w-44 items-center overflow-visible transition-transform hover:scale-105"
+          aria-label="Scroll to Home"
         >
           <img 
-            src="/assets/images/logo-optimized.png" 
-            alt="Logo" 
-            width="768"
-            height="512"
+            src="/assets/images/codinggroups-logo-transparent.png" 
+            alt="CodingGroups logo" 
+            width="920"
+            height="260"
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="h-28 sm:h-32 w-auto object-contain" 
+            className="w-56 max-w-none object-contain drop-shadow-[0_0_14px_rgba(255,122,0,0.3)]" 
           />
         </button>
 

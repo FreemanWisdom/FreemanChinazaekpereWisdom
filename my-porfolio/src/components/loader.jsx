@@ -62,7 +62,7 @@ export default function Loader({ isVisible }) {
           Loading Portfolio
         </p>
         <h2 className="mt-4 text-2xl font-black uppercase tracking-[0.32em] text-white">
-          CODECRAFT
+          CodingGroups
         </h2>
         <p className="mt-3 text-xs font-medium uppercase tracking-[0.35em] text-[#8ca3c2]">
           Aligning sections and interface layers

@@ -16,18 +16,18 @@ export default function Sidebar({ items, activeSection, onNavigate }) {
           <button
             type="button"
             onClick={() => onNavigate("home")}
-            className="group transition-all duration-300 hover:opacity-100"
+            className="group flex h-24 w-full items-center justify-center overflow-visible transition-all duration-300 hover:opacity-100"
             aria-label="Scroll to Home"
           >
             <img 
-              src="/assets/images/logo-optimized.png" 
-              alt="Logo" 
-              width="768"
-              height="512"
+              src="/assets/images/codinggroups-logo-transparent.png" 
+              alt="CodingGroups logo" 
+              width="920"
+              height="260"
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="h-48 xl:h-52 w-auto object-contain transition-all duration-500 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(255,122,0,0.25)]" 
+              className="w-72 max-w-none object-contain transition-all duration-500 group-hover:scale-105 drop-shadow-[0_0_18px_rgba(255,122,0,0.35)] xl:w-80" 
             />
           </button>
         </div>

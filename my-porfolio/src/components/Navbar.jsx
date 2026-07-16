@@ -28,7 +28,7 @@ export default function Navbar({
           onClick={() => handleNavigate("home")}
           className="text-2xl font-black text-white"
         >
-          CODECRAFT
+          CodingGroups
         </button>
 
         <div className="hidden items-center gap-8 md:flex">

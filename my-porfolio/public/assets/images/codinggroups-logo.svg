@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">CodingGroups logo</title>
+  <desc id="desc">Transparent CodingGroups logo with coding brackets, cube blocks, and blue-orange wordmark.</desc>
+  <defs>
+    <linearGradient id="topWhite" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#d9e8f8" />
+    </linearGradient>
+    <linearGradient id="blueTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b6ca4" />
+      <stop offset="1" stop-color="#073a70" />
+    </linearGradient>
+    <linearGradient id="blueSide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b4f8a" />
+      <stop offset="1" stop-color="#052b5c" />
+    </linearGradient>
+    <linearGradient id="orangeTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8d24" />
+      <stop offset="1" stop-color="#f45a17" />
+    </linearGradient>
+    <linearGradient id="orangeSide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f45f1b" />
+      <stop offset="1" stop-color="#c63a10" />
+    </linearGradient>
+    <filter id="logoShadow" x="-15%" y="-20%" width="130%" height="145%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#001b37" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#logoShadow)">
+    <path d="M125 101 62 180l63 79 31-25-43-54 43-54z" fill="#0b558d" />
+    <path d="M412 101 475 180l-63 79-31-25 43-54-43-54z" fill="#f05a18" />
+
+    <g stroke-linejoin="round" stroke-width="2.4">
+      <g stroke="#cbd7e5">
+        <path d="M217 78 265 51l48 27-48 28z" fill="url(#topWhite)" />
+        <path d="M168 106 217 78l48 28-49 28z" fill="url(#topWhite)" />
+        <path d="M119 134 168 106l48 28-49 28z" fill="url(#topWhite)" />
+        <path d="M216 134 265 106l48 28-49 28z" fill="url(#topWhite)" />
+        <path d="M167 162 216 134l48 28-49 28z" fill="url(#topWhite)" />
+      </g>
+
+      <g stroke="#062b55">
+        <path d="M119 134v56l48 28v-56z" fill="url(#blueTop)" />
+        <path d="M167 162v56l48 28v-56z" fill="#0b4b82" />
+        <path d="M215 190v56l49 28v-56z" fill="#07396d" />
+        <path d="M264 162v56l49-28v-56z" fill="url(#blueSide)" />
+        <path d="M215 190v56l49-28v-56z" fill="#063262" />
+      </g>
+
+      <g stroke="#d24713">
+        <path d="M313 78 361 51l48 27-48 28z" fill="url(#orangeTop)" />
+        <path d="M264 106 313 78l48 28-49 28z" fill="url(#orangeTop)" />
+        <path d="M313 134 361 106l49 28-49 28z" fill="url(#orangeTop)" />
+        <path d="M264 162 313 134l48 28-49 28z" fill="url(#orangeTop)" />
+        <path d="M313 190 361 162l49 28-49 28z" fill="url(#orangeTop)" />
+        <path d="M312 134v56l49 28v-56z" fill="url(#orangeSide)" />
+        <path d="M361 162v56l49-28v-56z" fill="#d84612" />
+        <path d="M312 190v56l49 28v-56z" fill="#ed5a18" />
+        <path d="M361 218v56l49-28v-56z" fill="#c83c10" />
+      </g>
+
+      <g stroke="#cbd7e5">
+        <path d="M216 37 242 22l27 15-27 16z" fill="#ffffff" />
+        <path d="M242 53v36l27-16V37z" fill="#dbe8f7" />
+        <path d="M216 37v36l26 16V53z" fill="#f7fbff" />
+      </g>
+    </g>
+  </g>
+
+  <g font-family="Space Grotesk, Outfit, Arial, sans-serif" font-size="98" font-weight="800" letter-spacing="0">
+    <text x="527" y="210" fill="#0b4f86">CODING</text>
+    <text x="855" y="210" fill="#f05a18">GROUPS</text>
+  </g>
+</svg>

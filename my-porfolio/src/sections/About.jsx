@@ -27,7 +27,7 @@ export default function About() {
               <div className="panel flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-[var(--color-secondary)]/90 px-4 py-2.5 text-center shadow-xl transition-all hover:-translate-y-1 hover:border-[var(--color-accent)]/30 sm:gap-3 sm:rounded-full sm:px-6 sm:py-3">
                 <div className="h-2 w-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
                 <p className="text-[10px] font-black uppercase leading-relaxed tracking-[0.16em] text-white whitespace-normal sm:text-[11px] sm:tracking-[0.2em] sm:whitespace-nowrap">
-                  Founder of Codecrafting
+                  Founder of CodingGroups
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function About() {
               <p>
                 I am a <span className="text-white font-bold">Front-End Developer</span> specialized in building high-performance 
                 interfaces using React 19, Next.js, and TypeScript. As the founder of 
-                <span className="text-[var(--color-accent)] text-white/95"> Codecrafting</span>, I approach 
+                <span className="text-[var(--color-accent)] text-white/95"> CodingGroups</span>, I approach 
                 every project with a dual perspective: the precision of an engineer and the 
                 eye of a designer.
               </p>
