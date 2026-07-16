@@ -1,4 +1,4 @@
-# CODECRAFT | Freeman Chinazaekpere Wisdom Portfolio
+# CodingGROUPS | Freeman Chinazaekpere Wisdom Portfolio
 
 A premium, high-performance personal portfolio built with React, Vite, and Tailwind CSS. Featuring theme-aware animations (Day/Space), custom typography, and a production-optimized build.
 
