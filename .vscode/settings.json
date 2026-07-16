@@ -3,5 +3,10 @@
     "css.lint.unknownAtRules": "ignore",
     "chatgpt.openOnStartup": true,
     "powermode.enabled": true,
-    "powermode.combo.timeout": 5
+    "powermode.combo.timeout": 5,
+    "chat.tools.terminal.autoApprove": {
+        "git remote": true,
+        "git stash": true,
+        "git push": true
+    }
 }
